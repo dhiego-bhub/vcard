@@ -20,7 +20,7 @@ cor_secundaria = "#4c4c4c"  # Cinza
 st.markdown(f"""
 <style>
     .main {{
-        background-color: white;
+        background-color: #f8f9fa;
         padding: 0 !important;
     }}
     .block-container {{
@@ -31,8 +31,8 @@ st.markdown(f"""
     .card-container {{
         background: white;
         border-radius: 20px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }}
     .perfil-img {{
         width: 120px;
@@ -44,8 +44,8 @@ st.markdown(f"""
         display: block;
     }}
     .nome-titulo {{
-        color: {cor_secundaria};
-        font-size: 24px;
+        color: #212529;
+        font-size: 26px;
         font-weight: bold;
         text-align: center;
         margin-top: 15px;
@@ -65,18 +65,21 @@ st.markdown(f"""
         margin-top: 5px;
     }}
     .contato-card {{
-        margin-top: 20px;
-        border: 1px solid #eee;
-        border-radius: 10px;
-        padding: 10px;
+        margin-top: 15px;
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        padding: 15px;
         display: flex;
         align-items: center;
         margin-bottom: 10px;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
+        border: none;
     }}
     .contato-card:hover {{
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+        border-left: 3px solid {cor_principal};
     }}
     .icon-box {{
         width: 40px;
@@ -86,41 +89,45 @@ st.markdown(f"""
         align-items: center;
         justify-content: center;
         margin-right: 15px;
-        background-color: {cor_principal}30;
+        background-color: rgba(188, 10, 83, 0.1);
     }}
     .icon-box i {{
         color: {cor_principal};
-        font-size: 20px;
+        font-size: 18px;
     }}
     .contato-info {{
         flex-grow: 1;
     }}
     .contato-tipo {{
         font-size: 12px;
-        color: #888;
+        color: #6c757d;
         margin: 0;
+        font-weight: 500;
     }}
     .contato-valor {{
         font-size: 14px;
-        color: #333;
+        color: #212529;
         margin: 0;
+        font-weight: 400;
     }}
     .btn-salvar {{
         background-color: {cor_principal};
         color: white;
         border: none;
-        padding: 12px 20px;
+        padding: 14px 20px;
         font-size: 16px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 12px;
         cursor: pointer;
         width: 100%;
         margin-top: 20px;
         transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(188, 10, 83, 0.2);
     }}
     .btn-salvar:hover {{
-        background-color: {cor_principal}dd;
+        background-color: #a5084a;
         transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(188, 10, 83, 0.25);
     }}
     .social-container {{
         display: flex;
@@ -138,25 +145,27 @@ st.markdown(f"""
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }}
     .social-icon:hover {{
         transform: scale(1.1);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     }}
     .social-icon i {{
         color: white;
-        font-size: 20px;
+        font-size: 18px;
     }}
     .logo-section {{
         text-align: center;
         margin-top: 30px;
         padding-top: 20px;
-        border-top: 1px solid #eee;
+        border-top: 1px solid #e9ecef;
     }}
     .wavy-bg {{
         position: relative;
-        height: 80px;
+        height: 70px;
         overflow: hidden;
-        margin-bottom: -40px;
+        margin-bottom: -35px;
     }}
     .wavy-bg svg {{
         position: absolute;
@@ -222,7 +231,7 @@ info = {
     "twitter": "seu_twitter",
     "facebook": "seu_facebook",
     "whatsapp": "+5511999999999",  # Formato sem espaços ou caracteres especiais
-    "logo": "https://via.placeholder.com/200x50"  # Substitua pela URL do logo da empresa
+    "logo": "https://diegues.arq.br/wp-content/uploads/2021/11/logo_header.png"  # Substitua pela URL do logo da empresa
 }
 
 # Gerar string do VCard
@@ -245,11 +254,11 @@ col1, col2, col3 = st.columns([1, 8, 1])
 with col2:
     st.markdown('<div class="card-container">', unsafe_allow_html=True)
     
-    # Área curva superior
+    # Área curva superior com cor mais suave
     st.markdown(f"""
     <div class="wavy-bg">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="{cor_principal}" fill-opacity="1" d="M0,64L60,80C120,96,240,128,360,138.7C480,149,600,139,720,122.7C840,107,960,85,1080,90.7C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+            <path fill="{cor_principal}" fill-opacity="0.8" d="M0,64L60,80C120,96,240,128,360,138.7C480,149,600,139,720,122.7C840,107,960,85,1080,90.7C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
         </svg>
     </div>
     """, unsafe_allow_html=True)
@@ -341,9 +350,10 @@ with col2:
         # Link para WhatsApp
         st.markdown(f"""
         <a href="https://wa.me/{info['whatsapp']}" target="_blank" style="text-decoration: none;">
-            <button style="background-color: #25D366; color: white; border: none; padding: 12px 20px; 
-            font-size: 16px; font-weight: bold; border-radius: 10px; cursor: pointer; width: 100%; 
-            margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <button style="background-color: #25D366; color: white; border: none; padding: 14px 20px; 
+            font-size: 16px; font-weight: bold; border-radius: 12px; cursor: pointer; width: 100%; 
+            margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2); transition: all 0.3s ease;">
                 <i class="fab fa-whatsapp"></i> WHATSAPP
             </button>
         </a>
