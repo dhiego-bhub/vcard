@@ -221,7 +221,7 @@ info = {
     "nome": "Seu Nome",
     "cargo": "Seu Cargo",
     "empresa": "Nome da Sua Empresa",
-    "foto": "https://via.placeholder.com/150",  # Substitua pela URL da sua foto
+    "foto": "https://play-lh.googleusercontent.com/7Ak4Ye7wNUtheIvSKnVgGL_OIZWjGPZNV6TP_3XLxHC-sDHLSE45aDg41dFNmL5COA",  # Substitua pela URL da sua foto
     "telefone": "+55 11 99999-9999",
     "email": "seuemail@empresa.com.br",
     "site": "www.seusite.com.br",
